@@ -12,7 +12,7 @@ require __DIR__ . '/includes/layout_header.php';
 ?>
 
 <div class="mb-6 flex items-center justify-between">
-  <p class="text-sm text-gray-500"><?= count($products) ?> items</p>
+  <p class="text-sm text-gray-500"><?= count($products) ?> item<?= count($products) === 1 ? '' : 's' ?></p>
   <a href="/product_form.php" class="inline-flex items-center gap-1.5 rounded-lg bg-brand-500 hover:bg-brand-400 px-4 py-2 text-sm font-semibold text-ink">+ Add New Item</a>
 </div>
 
