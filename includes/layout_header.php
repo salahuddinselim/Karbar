@@ -112,11 +112,7 @@ $avatarLetter = strtoupper(substr($currentUser['name'], 0, 1));
   <div class="flex-1 flex flex-col min-w-0">
     <header class="h-16 bg-panel border-b border-line flex items-center gap-4 px-4 md:px-6">
       <button class="md:hidden text-gray-400" onclick="document.getElementById('mobileNav').classList.toggle('hidden')">&#9776;</button>
-      <div class="hidden md:flex flex-1 max-w-md items-center gap-2 rounded-lg border border-line bg-panel-2 px-3 py-2 text-sm text-gray-500">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <span>Search or create anything...</span>
-        <span class="ml-auto text-xs border border-line rounded px-1.5 py-0.5 text-gray-600">Ctrl+K</span>
-      </div>
+      <div class="hidden md:block flex-1"></div>
       <h1 class="flex-1 md:hidden text-base font-semibold text-white"><?= e($pageTitle ?? 'Dashboard') ?></h1>
       <div class="flex items-center gap-3 text-gray-400">
         <span class="hidden sm:inline text-xs rounded-full bg-panel-2 border border-line px-2 py-1"><?= e($storeSettings['currency']) ?></span>
