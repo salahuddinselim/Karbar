@@ -27,14 +27,14 @@ $currencyPrefix = $storeSettings['currency'] === 'BDT' ? 'Tk.' : $storeSettings[
     <input type="hidden" name="items" id="itemsField" value="[]">
 
     <div class="flex gap-2" id="typeTabs">
-      <label class="tx-type-label cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium border-brand-500 bg-brand-500 text-ink" data-type="SALE">
-        <input type="radio" name="type" value="SALE" checked class="hidden">Sale
+      <label class="tx-type-label cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium border-brand-500 bg-brand-500 text-ink has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400 has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-panel" data-type="SALE">
+        <input type="radio" name="type" value="SALE" checked class="sr-only">Sale
       </label>
-      <label class="tx-type-label cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium border-line text-gray-300" data-type="PURCHASE">
-        <input type="radio" name="type" value="PURCHASE" class="hidden">Purchase
+      <label class="tx-type-label cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium border-line text-gray-300 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400 has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-panel" data-type="PURCHASE">
+        <input type="radio" name="type" value="PURCHASE" class="sr-only">Purchase
       </label>
-      <label class="tx-type-label cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium border-line text-gray-300" data-type="EXPENSE">
-        <input type="radio" name="type" value="EXPENSE" class="hidden">Expense
+      <label class="tx-type-label cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium border-line text-gray-300 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400 has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-panel" data-type="EXPENSE">
+        <input type="radio" name="type" value="EXPENSE" class="sr-only">Expense
       </label>
     </div>
 
@@ -172,7 +172,10 @@ function setType(type) {
 }
 
 document.querySelectorAll('.tx-type-label').forEach(el => {
-  el.addEventListener('click', () => setType(el.dataset.type));
+  // Listen on the radio's own change event (not the label's click) so keyboard
+  // users switching options with arrow keys — which changes the radio without
+  // a click on the label — also update the form correctly.
+  el.querySelector('input[type=radio]').addEventListener('change', () => setType(el.dataset.type));
 });
 
 function addLine() {

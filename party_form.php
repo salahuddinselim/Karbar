@@ -34,12 +34,12 @@ require __DIR__ . '/includes/layout_header.php';
       <div class="flex gap-2">
         <?php $type = $old['type'] ?? 'CUSTOMER'; ?>
         <label class="flex-1">
-          <input type="radio" name="type" value="CUSTOMER" class="peer hidden" <?= $type === 'CUSTOMER' ? 'checked' : '' ?>>
-          <span class="block text-center rounded-lg border border-line px-3 py-2 text-sm text-gray-300 peer-checked:bg-brand-500 peer-checked:text-ink peer-checked:border-brand-500 cursor-pointer">Customer</span>
+          <input type="radio" name="type" value="CUSTOMER" class="peer sr-only" <?= $type === 'CUSTOMER' ? 'checked' : '' ?>>
+          <span class="block text-center rounded-lg border border-line px-3 py-2 text-sm text-gray-300 peer-checked:bg-brand-500 peer-checked:text-ink peer-checked:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-400 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-panel cursor-pointer">Customer</span>
         </label>
         <label class="flex-1">
-          <input type="radio" name="type" value="SUPPLIER" class="peer hidden" <?= $type === 'SUPPLIER' ? 'checked' : '' ?>>
-          <span class="block text-center rounded-lg border border-line px-3 py-2 text-sm text-gray-300 peer-checked:bg-brand-500 peer-checked:text-ink peer-checked:border-brand-500 cursor-pointer">Supplier</span>
+          <input type="radio" name="type" value="SUPPLIER" class="peer sr-only" <?= $type === 'SUPPLIER' ? 'checked' : '' ?>>
+          <span class="block text-center rounded-lg border border-line px-3 py-2 text-sm text-gray-300 peer-checked:bg-brand-500 peer-checked:text-ink peer-checked:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-400 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-panel cursor-pointer">Supplier</span>
         </label>
       </div>
     </div>
