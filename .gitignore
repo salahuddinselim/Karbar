@@ -1,0 +1,3 @@
+.env
+uploads/receipts/*
+!uploads/receipts/.htaccess

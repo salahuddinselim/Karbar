@@ -1,0 +1,17 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# Block access to dotfiles (.env, .git, etc.) and this repo's non-web dirs.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Block direct download of the schema/docs from the web root (no code-execution
+# risk, but no reason to expose the DB layout to anyone who requests the URL).
+<FilesMatch "\.(sql|md)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_php.c>
+    php_flag display_errors off
+</IfModule>
